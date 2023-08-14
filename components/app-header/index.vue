@@ -18,6 +18,7 @@
           <span>下载OPPO商城APP</span>
         </NuxtLink>
         <NuxtLink class="link">
+          <i class="iconfont icon-user"></i>
           <span>登录</span>
         </NuxtLink>
         <NuxtLink class="link">
@@ -49,6 +50,11 @@
 
       &:hover {
         color: #fff;
+      }
+
+      i {
+        font-size: 12px;
+        margin-right: 5px
       }
     }
 

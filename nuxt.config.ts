@@ -1,16 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  app: {
-    head: {
-      title: "Hello-Nuxt",
-      charset: "utf-8",
-      meta: [
-        {
-          name: 'keywords',
-          content: 'nuxt'
+  //自动引入全局css样式
+  css: ['normalize.css', '@/assets/css/global.scss'],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: "@use '@/assets/css/var.scss' as * ;",
         }
-      ]
+      }
     }
-  }
+  },
 })

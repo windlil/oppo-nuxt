@@ -1,5 +1,7 @@
 <template>
   <div>
-    <NuxtWelcome />
+    <div class="wrapper">
+      123
+    </div>
   </div>
 </template>

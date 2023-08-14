@@ -17,14 +17,15 @@
         <NuxtLink class="link"> 
           <span>下载OPPO商城APP</span>
         </NuxtLink>
-        <NuxtLink class="link">
+        <NuxtLink class="link" to="/login">
           <i class="iconfont icon-user"></i>
           <span>登录</span>
         </NuxtLink>
-        <NuxtLink class="link">
+        <NuxtLink class="link" to="/reg">
           <span>注册</span>
         </NuxtLink>
         <NuxtLink class="link">
+          <i class="iconfont shoppingcart"></i>
           <span>购物车</span>
         </NuxtLink>
       </div>
@@ -44,6 +45,7 @@
     @include normalFlex();
 
     .link {
+      color: #bcbcbc;
       margin-right: 15px;
       font-size: 12px;
       cursor: pointer;

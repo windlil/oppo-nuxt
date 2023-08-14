@@ -2,6 +2,7 @@
   <div class="layout">
     <!-- header -->
     <app-header></app-header>
+    <nav-bar></nav-bar>
     <slot></slot>
 
     <!-- footer -->

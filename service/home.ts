@@ -1,10 +1,11 @@
 import myRequest from './index'
 import type { IResultData } from './index'
+import { IHomeState } from 'store/types'
 
-type Type = 'oppo' | 'onePlus' | 'intelligent'
+export type HomeInfoType = 'oppo' | 'onePlus' | 'intelligent'
 
-export const getHomeInfo =  (type?: Type): any => {
-  return myRequest.get<IResultData<any>>('/home/info', {
+export const getHomeInfo =  (type?: HomeInfoType) => {
+  return myRequest.get<IResultData<IHomeState>>('/home/info', {
     type: type ?? 'oppo'
   })
 }

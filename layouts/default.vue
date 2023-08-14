@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { getHomeInfo } from '@/service/home'
+import { useHomeStore } from '@/store/index'
 
-const { data }  = await getHomeInfo('oppo')
-console.log(data.value)
+const homeStore = useHomeStore()
+homeStore.fetchHomeInfoData('oppo')
 </script>
 
 <template>

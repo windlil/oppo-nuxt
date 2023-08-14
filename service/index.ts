@@ -1,7 +1,12 @@
 import { AsyncData, UseFetchOptions } from "nuxt/app";
 
 type Method = "GET" | "POST"
-const BASE_URL = 'http://codercba:9060/oppo-nuxt/api/'
+const BASE_URL = 'http://codercba.com:9060/oppo-nuxt/api/'
+
+export interface IResultData<T> { 
+  code: number,
+  data: T
+}
 
 class myRequest {
   request<T = any>(
@@ -26,6 +31,7 @@ class myRequest {
 
       useLazyFetch<T>(url, _options as any)
         .then((res) => {
+          console.log(res)
           return resolve(res as AsyncData<T, Error>)
         })
         .catch((err) => {
@@ -35,11 +41,11 @@ class myRequest {
   }
 
   get<T = any>(url: string, data?: any, options?:UseFetchOptions<T>) {
-    return this.request(url, "GET", data, options)
+    return this.request<T>(url, "GET", data, options)
   }
 
   post<T = any>(url: string, data?: any, options?:UseFetchOptions<T>) {
-    return this.request(url,"POST", data, options)
+    return this.request<T>(url,"POST", data, options)
   }
 }
 

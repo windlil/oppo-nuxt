@@ -11,4 +11,18 @@ export default defineNuxtConfig({
       }
     }
   },
+  app: {
+    head: {
+      meta: [
+        {
+          name: "description",
+          content: "nuxt project"
+        },
+        {
+          name: "keywords",
+          content: "商城,手机,电子产品"
+        }
+      ]
+    }
+  }
 })

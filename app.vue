@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <div class="wrapper">
-      123
-    </div>
-  </div>
+  <NuxtLayout>
+    <NuxtPage></NuxtPage>
+  </NuxtLayout>
 </template>

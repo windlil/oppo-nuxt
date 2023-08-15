@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useHomeStore } from '@/store/index'
+import { storeToRefs } from 'pinia'
 
 const homeStore = useHomeStore()
+const { navbars } = storeToRefs(homeStore) as any
 homeStore.fetchHomeInfoData('oppo')
 </script>
 
@@ -9,7 +11,7 @@ homeStore.fetchHomeInfoData('oppo')
   <div class="layout">
     <!-- header -->
     <app-header></app-header>
-    <nav-bar></nav-bar>
+    <nav-bar :navbars="navbars"></nav-bar>
     <slot></slot>
 
     <!-- footer -->

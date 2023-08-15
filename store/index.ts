@@ -18,7 +18,6 @@ export const useHomeStore =  defineStore('store', {
         this.navbars = data.value.data.navbars ?? []
         this.banners = data.value.data.banners ?? []
         this.categorys = data.value.data.categorys ?? []
-        console.log(data)
       }
     }
 })

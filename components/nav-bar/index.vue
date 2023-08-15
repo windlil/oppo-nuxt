@@ -1,22 +1,21 @@
 <script setup lang="ts">
-const contentGroup = [
-  {
-    name: 'OPPO专区',
-    link: ''
-  },
-  {
-    name: 'OnePlus专区',
-    link: ''
-  },
-  {
-    name: '智能硬件',
-    link: ''
-  },
-  {
-    name: '服务',
-    link: ''
-  },
-]
+import { INavbar } from 'store/types';
+
+export interface Props {
+  navbars: INavbar[]
+}
+
+defineProps<Props>()
+
+const currentIndex = ref<number>(0)
+
+function handleClick(index: number) {
+  currentIndex.value = index
+}
+
+function handleToPath(type: string): string {
+  return type === 'oppo' ? '/' : `/${type}`
+}
 </script>
 
 <template>
@@ -27,9 +26,11 @@ const contentGroup = [
       </div>
       <div class="content-center">
         <ul class="content-group">
-          <li v-for="item in contentGroup" :key="item.name">
-            <NuxtLink class="link">{{ item.name }}</NuxtLink>
-          </li>
+          <template v-for="(item, index) in navbars" :key="item.id" >
+            <li :class="{active: currentIndex === index}" @click="handleClick(index)">
+              <NuxtLink class="link" :to="handleToPath(item.type as string)">{{ item.title }}</NuxtLink>
+            </li>
+          </template>
         </ul>
       </div>
       <search></search>
@@ -89,5 +90,10 @@ const contentGroup = [
       justify-content: space-between;
     }
   }
+}
+
+.active {
+  color: #fff;
+  font-weight: bold;
 }
 </style>

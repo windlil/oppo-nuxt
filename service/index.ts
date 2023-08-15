@@ -31,7 +31,6 @@ class myRequest {
 
       useLazyFetch<T>(url, _options as any)
         .then((res) => {
-          console.log(res)
           return resolve(res as AsyncData<T, Error>)
         })
         .catch((err) => {

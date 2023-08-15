@@ -12,6 +12,7 @@ const { banners, categorys } = storeToRefs(homeStore) as any
       <swiper :banners="banners"></swiper>
       <tab-category :category="categorys"></tab-category>
       <section-title title="Find N 系列"></section-title>
+      <grid-view :products="categorys[1]"></grid-view>
     </div>
   </div>
 </template>
